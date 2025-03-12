@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="view.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
   <div class="main-container">
 
     <nav class="navbar">
-      <div class="logo">Dashboard</div>
+      <div class="logo">Admin</div>
       <ul class="nav-links">
-        <li><a href="#" class="admin-btn1">About Us</a></li>
-        <li><a href="/login/login.html" class="admin-btn">Log In for Admin</a></li>
+        <li><a href="about.html" class="admin-btn1">About Us</a></li>
+        <li><a href="view.html" class="admin-btn">Log Out</a></li>
       </ul>
     </nav>
 
@@ -39,7 +37,7 @@
             <div id="status-icon"></div>
           </div>
         </div>
-        <button id="btnRefill" type="submit">REFILL</button>
+        <button id="btnRefill" type="submit">*REFILL*</button>
       </div>
 
       <!-- Bin Status Section -->
@@ -54,6 +52,31 @@
       </div>
     </div>
 
+    <!-- Water History Section -->
+    <div class="section history">
+      <h1>Water History</h1>
+      <table>
+        <thead>
+          <tr>
+          <th>No.</th>
+          <th>Amount of Water</th>
+          <th>Time</th>
+          <th>Day</th>
+          <th>Month</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>1 Gal</td>
+          <td>12:00 PM</td>
+          <td>25</td>
+          <td>February</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
   </div>
 
 
