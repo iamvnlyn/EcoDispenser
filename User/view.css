@@ -1,0 +1,304 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/font/Montserrat-VariableFont_wght.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poiret_One';
+  src: url(/font/PoiretOne-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Montserrat';
+  display: flex;
+  justify-content: center; 
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Navigation Bar Styling */
+.navbar{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #175d68;
+  color: white;
+  position:fixed;
+  width:100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+  font-family: 'Poiret_One' ;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-links{
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li{
+  display: inline;
+}
+
+.nav-links li a{
+  font-family: 'Montserrat';
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 8px 15px;
+  transition:0.3s ease-in-out;
+  border: 5px;
+}
+
+.nav-links a:hover{
+  background-color: #148c92;
+}
+
+.admin-btn{
+  display: inline-block;
+  background-color: #ff474c;
+  color: white;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  margin-right: 3rem;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+.admin-btn:hover{
+  background-color: #e53e3e;
+
+}
+
+.admin-btn1{
+  display: inline-block;
+  color: white;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  margin-right: 3rem;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+h1{
+  font-family: 'Poiret_One';
+  font-size: 3rem;
+  text-align: Center;
+
+}
+
+@media screen and (max-width: 600px){
+  h1{
+    padding-top: 25px;
+    font-size: 1.5rem;
+  }
+  
+}
+
+
+@media screen and (max-width:768px){
+  .navbar{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+   .nav-links {
+       flex-direction: column;
+       gap: 10px;
+   }
+
+   .nav-links li {
+       display: block;
+   }
+
+
+  
+}
+
+/* Main container styling */
+
+.main-container {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column; 
+  width: 90%;
+  max-width: 100%; 
+  gap: 20px;
+}
+
+.top-sections {
+  display: flex;
+  justify-content: space-between; 
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px){
+  .top-sections{
+    flex-direction: column;
+  }
+  
+}
+
+.section {
+  flex: 1; 
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.jug-status, .bins, .history {
+  text-align: center; 
+}
+
+
+.bins {
+  list-style: none;
+}
+
+.bin {
+  padding: 15px;
+  margin: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  font-size: 15px;
+  height: 2.5rem;
+  width: 8rem;
+  background-color: rgb(81, 125, 213);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(19, 219, 149);
+}
+
+#btnRefill{
+  margin-bottom: 1rem;
+  background-color: #ff474C;
+  color:white;
+  font-size: 20px;
+  height: 2.5rem;
+  width: 30rem;
+  border-radius: 10px;
+  letter-spacing: 1.5rem;
+}
+
+@media screen and (max-width: 600px){
+  #btnRefill{
+    width: 100%;
+    font-size: 16px;
+    letter-spacing: 0.5rem;
+  }
+  
+}
+
+#btnRefill:hover{
+  background-color:  rgb(19, 219, 149);
+}
+
+.full {
+  background-color: blue; 
+}
+.empty {
+  background-color: red; 
+}
+p {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 325px;
+  
+}
+
+#water-jug-container {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  position: relative;
+  border-radius: 10px;
+  border: 3px solid #333;
+  background-color: #eaeaea;
+  
+}
+
+@media screen and (max-width: 600px){
+  #water-jug-container{
+    max-width: 100px;
+  }
+  
+}
+
+/* SVG jug styling */
+#water-jug {
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#water-level {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: blue; 
+  transition: height 0.5s, background-color 0.5s;
+}
+
+#status {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+#status-text {
+  margin-bottom: 10px;
+}
+
+/* GIF or animated image container */
+#status-icon {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none; 
+}
+
+#status-icon.visible {
+  display: block; 
+}
+

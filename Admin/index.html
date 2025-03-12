@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-container">
+
+    <nav class="navbar">
+      <div class="logo">Admin</div>
+      <ul class="nav-links">
+        <li><a href="#" class="admin-btn1">About Us</a></li>
+        <li><a href="/User/view.html" class="admin-btn">Log Out</a></li>
+      </ul>
+    </nav>
+
+    <h1>Welcome to our Eco-Dispenser</h1>
+
+    <div class="top-sections">
+      <!-- Water Level Alert Section -->
+      <div class="section jug-status">
+        <h2>Water Level Alert</h2>
+
+        <div id="container">
+          <div id="water-jug-container">
+            <svg id="water-jug" width="150" height="250" viewBox="0 0 150 250" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 0 H100 A20 20 0 0 1 120 20 V230 A20 20 0 0 1 100 250 H50 A20 20 0 0 1 30 230 V20 A20 20 0 0 1 50 0 Z" fill="#eaeaea" />
+            </svg>
+            <div id="water-level"></div>
+          </div>
+
+          <div id="status">
+            <span id="status-text">Water level: Full</span>
+            <div id="status-icon"></div>
+          </div>
+        </div>
+        <button id="btnRefill" type="submit">*REFILL*</button>
+      </div>
+
+      <!-- Bin Status Section -->
+      <div class="section bins">
+        <h2>Bin Status Monitoring</h2>
+        <div class="bins">
+          <div class="bin"><li>Bin #1 -<button type="submit">Goods</button></li></div>
+          <div class="bin"><li>Bin #2 -<span id="bin2-status"></span><button type="submit">Goods</button></li></div>
+          <div class="bin"><li>Bin #3 -<span id="bin3-status"></span><button type="submit">Goods</button></li></div>
+          <div class="bin"><li>Bin #4 -<span id="bin4-status"></span><button type="submit">Goods</button></li></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Water History Section -->
+    <div class="section history">
+      <h1>Water History</h1>
+      <table>
+        <thead>
+          <tr>
+          <th>No.</th>
+          <th>Amount of Water</th>
+          <th>Time</th>
+          <th>Day</th>
+          <th>Month</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>1 Gal</td>
+          <td>12:00 PM</td>
+          <td>25</td>
+          <td>February</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+
+   <script>
+    function updateWaterLevel(level, isCritical) {
+      const waterLevel = document.getElementById("water-level");
+      const statusText = document.getElementById("status-text");
+      const statusIcon = document.getElementById("status-icon");
+
+      // Update water level height
+      waterLevel.style.height = `${level}%`;
+
+      // Update water color and status
+      if (isCritical) {
+        waterLevel.style.backgroundColor = 'red';
+        statusText.textContent = 'Water level: Refill Needed';
+        statusText.style.color = 'red';
+        statusIcon.style.backgroundImage = 'url("./warning.gif")'; 
+        statusIcon.classList.add("visible");
+      } else {
+        waterLevel.style.backgroundColor = 'blue';
+        statusText.textContent = 'Water level: Full';
+        statusText.style.color = 'green';
+
+        // Show the external GIF for the full state
+        statusIcon.style.backgroundImage = 'url("./check-mark-good.gif")';
+        statusIcon.classList.add("visible");
+      }
+    }
+
+    // Simulate sensor updates with setTimeout (replace with real sensor data)
+    setTimeout(() => updateWaterLevel(30, true), 5000); // Critical level at 30% after 5 seconds
+    setTimeout(() => updateWaterLevel(90, false), 10000); // Full level at 90% after 10 seconds
+    setTimeout(() => updateWaterLevel(100, false), 15000); // Fully full after 15 seconds
+  </script>
+
+    
+</body>
+</html>
